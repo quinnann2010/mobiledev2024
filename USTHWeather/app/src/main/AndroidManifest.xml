@@ -12,31 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.USTHWeather"
         tools:targetApi="31">
-        <activity
-            android:name=".WeatherActivity"
-            android:exported="false"
-            android:theme="@style/Theme.USTHWeather" />
-        <activity
-            android:name=".WeatherActivity"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".WeatherActivity"
-            android:exported="false"
-            android:label="@string/title_activity_WeatherActivity"
-            android:theme="@style/Theme.USTHWeather"
-            tools:ignore="DuplicateActivity" />
+
+        <!-- Declare WeatherActivity as the main activity -->
         <activity
             android:name=".WeatherActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.USTHWeather"
-            tools:ignore="DuplicateActivity">
+            android:label="@string/title_activity_weather"
+            android:theme="@style/Theme.USTHWeather">
+
+            <!-- Intent filter to mark this as the launcher activity -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

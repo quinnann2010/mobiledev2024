@@ -1,264 +1,303 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="0dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#e0f7fa">
+    android:background="@color/white">
 
-    <androidx.appcompat.widget.Toolbar
+    <!-- Forecast list container -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="USTH Weather"
-        app:titleTextColor="@android:color/white"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        android:orientation="vertical"
+        android:background="#e6e6ff"
+        android:padding="8dp"
+        android:elevation="4dp"
+        android:layout_margin="8dp">
 
+        <!-- Monday -->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="end"
-            android:gravity="end">
+            android:gravity="center_vertical"
+            android:padding="8dp">
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:contentDescription="Refresh"
-                android:padding="8dp"
-                android:src="@drawable/refresh" />
+            <!-- Day Text -->
+            <TextView
+                android:id="@+id/text_view_day_mon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mon"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_weight="0.7" />
 
+            <!-- Weather Icon -->
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:contentDescription="Settings"
-                android:padding="8dp"
-                android:src="@drawable/setting" />
+                android:id="@+id/image_view_icon_mon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/partly_cloudy"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Weather Description and Temperature (Vertical Layout) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <!-- Weather Description (Condition) -->
+                <TextView
+                    android:id="@+id/text_view_condition_mon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Partly Cloudy"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <!-- Temperature Range -->
+                <TextView
+                    android:id="@+id/text_view_temperature_mon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24C - 31C"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
         </LinearLayout>
-    </androidx.appcompat.widget.Toolbar>
 
-    <!-- Example of one day's layout -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Tuesday -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mon"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/sun"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
+            <!-- Day Text -->
+            <TextView
+                android:id="@+id/text_view_day_tue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tue"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_weight="0.6" />
 
-        <TextView
-            android:layout_width="wrap_content"
+            <!-- Weather Icon -->
+            <ImageView
+                android:id="@+id/image_view_icon_tue"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/rainy"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Weather Description and Temperature (Vertical Layout) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <!-- Weather Description (Condition) -->
+                <TextView
+                    android:id="@+id/text_view_condition_tue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Showers"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <!-- Temperature Range -->
+                <TextView
+                    android:id="@+id/text_view_temperature_tue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24C - 30C"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Wednesday -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Partly Sunny\n31C - 40C"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <!-- Day Text -->
+            <TextView
+                android:id="@+id/text_view_day_wed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wed"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_weight="1.1" />
+
+            <!-- Weather Icon -->
+            <ImageView
+                android:id="@+id/image_view_icon_wed"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/rainy"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Weather Description and Temperature (Vertical Layout) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2">
+
+                <!-- Weather Description (Condition) -->
+                <TextView
+                    android:id="@+id/text_view_condition_wed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rain"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <!-- Temperature Range -->
+                <TextView
+                    android:id="@+id/text_view_temperature_wed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22C - 23C"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Thursday -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <!-- Day Text -->
+            <TextView
+                android:id="@+id/text_view_day_thu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thu"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_weight="2.5" />
+
+            <!-- Weather Icon -->
+            <ImageView
+                android:id="@+id/image_view_icon_thu"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/scattered"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Weather Description and Temperature (Vertical Layout) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2">
+
+                <!-- Weather Description (Condition) -->
+                <TextView
+                    android:id="@+id/text_view_condition_thu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scattered Showers"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <!-- Temperature Range -->
+                <TextView
+                    android:id="@+id/text_view_temperature_thu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22C - 27C"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Friday -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <!-- Day Text -->
+            <TextView
+                android:id="@+id/text_view_day_fri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fri"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_weight="1.8" />
+
+            <!-- Weather Icon -->
+            <ImageView
+                android:id="@+id/image_view_icon_fri"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/partly_cloudy"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Weather Description and Temperature (Vertical Layout) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2">
+
+                <!-- Weather Description (Condition) -->
+                <TextView
+                    android:id="@+id/text_view_condition_fri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mostly Cloudy"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <!-- Temperature Range -->
+                <TextView
+                    android:id="@+id/text_view_temperature_fri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23C - 30C"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tue"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/sun2"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Partly Sunny\n30C - 40C"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wed"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/cloudy"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Partly Cloudy\n24C - 31C"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thu"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/rain"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Partly Rainy\n24C - 31C"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fri"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/weather"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Partly Cloudy and Sunny\n30C - 35C"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sat"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/rainy"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rainy\n14C - 20C"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sun"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/sun"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sunny\n35C - 45C"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_gravity="center_vertical" />
-    </LinearLayout>
-
-    <!-- Repeat the above LinearLayout for each day -->
-    <!-- You can replace the text and image source accordingly -->
 
 </LinearLayout>
